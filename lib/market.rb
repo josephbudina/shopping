@@ -60,7 +60,6 @@ class Market
   end
 
   def sell(item, quantity)
-    # require 'pry'; binding.pry
     if total_inventory[item].nil?
       false
     elsif total_inventory[item][:quantity] < quantity
