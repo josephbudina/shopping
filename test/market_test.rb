@@ -156,7 +156,7 @@ class MarketTest < Minitest::Test
         vendors: [vendor2, vendor3]
       },
     }
-
+  assert_equal [item1,item2,item4,item3], @market.item_list
   assert_equal expected, @market.total_inventory
   end
 end
