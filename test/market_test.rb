@@ -1,5 +1,7 @@
 require 'Minitest/autorun'
 require 'Minitest/pride'
+require 'date'
+require 'mocha/minitest'
 require './lib/item'
 require './lib/vendor'
 require './lib/market'
