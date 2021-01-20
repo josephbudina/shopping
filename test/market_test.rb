@@ -210,4 +210,9 @@ class MarketTest < Minitest::Test
 
     assert_equal ["Banana Nice Cream", "Peach", "Peach-Raspberry Nice Cream", "Tomato"], @market.sorted_item_list
   end
+
+  def test_it_can_add_date
+    Date.stubs(:today).returns(Date.parse("20200224"))
+    assert_equal "24/02/2020", @market.date
+  end
 end
