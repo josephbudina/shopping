@@ -30,4 +30,14 @@ class Market
       end
     end.uniq
   end
+
+  def total_inventory
+    item_list.each_with_object({}) do |item, items|
+      items[item] = {quantity: 0, vendors: []}
+      vendors_that_sell(item).each do |vendor|
+        items[item][:vendors] << vendor
+        items[item][:quantity] += vendor.check_stock(item)
+      end
+    end
+  end
 end

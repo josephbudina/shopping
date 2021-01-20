@@ -133,6 +133,7 @@ class MarketTest < Minitest::Test
 
     vendor3 = Vendor.new("Palisade Peach Shack")
     vendor3.stock(item1, 65)
+    vendor3.stock(item3, 10)
 
     @market.add_vendor(vendor1)
     @market.add_vendor(vendor2)
