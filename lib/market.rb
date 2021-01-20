@@ -40,4 +40,10 @@ class Market
       end
     end
   end
+
+  def overstocked_items
+    total_inventory.map do |item, vendors_and_quantities|
+      item if vendors_and_quantities[:quantity] > 50 && vendors_that_sell(item).length > 1
+    end.compact
+  end
 end
