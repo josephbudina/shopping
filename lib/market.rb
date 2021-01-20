@@ -46,4 +46,12 @@ class Market
       item if vendors_and_quantities[:quantity] > 50 && vendors_that_sell(item).length > 1
     end.compact
   end
+
+  def sorted_item_list
+    @vendors.flat_map do |vendor|
+      vendor.inventory.map do |item, name|
+        item.name
+      end
+    end.sort.uniq
+  end
 end
